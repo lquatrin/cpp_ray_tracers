@@ -1,0 +1,3 @@
+add_subdirectory(simplepathtracer)
+add_subdirectory(simpleraytracer)
+add_subdirectory(Smallpaint)
