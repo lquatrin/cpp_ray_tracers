@@ -1,1 +1,1 @@
-### Rendering Algorithms
+### Ray Tracing-based Algorithms
