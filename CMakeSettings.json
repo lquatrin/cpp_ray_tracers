@@ -1,28 +1,28 @@
 ﻿{
   "configurations": [
     {
-      "name": "x64-Debug vs2019",
-      "generator": "Visual Studio 16 2019 Win64",
-      "configurationType": "Debug",
-      "inheritEnvironments": [ "platform_x64", "msvc_x64_x64" ],
-      "intelliSenseMode": "windows-msvc-x64",
-      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "name": "x64-Release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": []
     },
     {
-      "name": "x64-Release vs2019",
-      "generator": "Visual Studio 16 2019 Win64",
-      "configurationType": "Release",
-      "inheritEnvironments": [ "platform_x64", "msvc_x64_x64" ],
-      "intelliSenseMode": "windows-msvc-x64",
-      "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-      "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": []
     }
   ]
 }

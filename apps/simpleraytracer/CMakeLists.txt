@@ -24,6 +24,13 @@ add_executable(simpleraytracer main.cpp
 find_package(OpenGL REQUIRED)
 link_directories(${OPENGL_gl_LIBRARY})
 
+set_target_properties(simpleraytracer 
+                     PROPERTIES 
+                     RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+
+set_target_properties(simpleraytracer 
+                     PROPERTIES 
+                     RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_BINARY_DIR}/Release)
 # . Debug
 target_link_libraries(simpleraytracer debug ${OPENGL_gl_LIBRARY})
 target_link_libraries(simpleraytracer debug freeglut/freeglut)
@@ -43,15 +50,15 @@ target_link_libraries(simpleraytracer optimized pthreads/pthreadVC2)
 #add_dependencies(simpleraytracer raytracer_utils)
 
 # . Debug
-file(COPY "${CMAKE_SOURCE_DIR}/lib/glew/glew32.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Debug")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/freeglut/freeglut.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Debug")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadVC2.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Debug")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadGC2.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Debug")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/libgomp-1.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Debug")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/glew/glew32.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Debug")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/freeglut/freeglut.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Debug")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadVC2.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Debug")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadGC2.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Debug")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/libgomp-1.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Debug")
 
 # . Release
-file(COPY "${CMAKE_SOURCE_DIR}/lib/glew/glew32.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Release")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/freeglut/freeglut.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Release")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadVC2.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Release")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadGC2.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Release")
-file(COPY "${CMAKE_SOURCE_DIR}/lib/libgomp-1.dll" DESTINATION "${CMAKE_SOURCE_DIR}/bin/Release")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/glew/glew32.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Release")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/freeglut/freeglut.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Release")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadVC2.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Release")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/pthreads/pthreadGC2.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Release")
+file(COPY "${CMAKE_SOURCE_DIR}/lib/libgomp-1.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/Release")
